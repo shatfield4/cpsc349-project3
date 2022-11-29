@@ -1,4 +1,4 @@
-# cpsc349-project2
+# cpsc349-project3
 
 The repository contains CPSC349 Project 3 for Chingsan Ly, Sean Hatfield, Elizabeth Steubs, and Erica Bravo
 
