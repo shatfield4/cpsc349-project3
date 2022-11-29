@@ -4,9 +4,10 @@
     "postcss": "^8.4.19"
   },
   "scripts": {
+    "dev": "browser-sync start --server --startPath ./index.html --files '*.html,*.css,*.js'",
     "build-css": "tailwindcss build -i style.css -o css/style.css",
     "tailwind": "tailwindcss -i style.css -o css/style.css --watch",
-    "start": "browser-sync start --server --startPath /index.html --files '*.html,*.css,*.js'"
+    "start": "npm-run-all --parallel dev tailwind"
   },
   "devDependencies": {
     "npm-run-all": "^4.1.5",
