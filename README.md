@@ -14,5 +14,5 @@ The repository contains CPSC349 Project 3 for Chingsan Ly, Sean Hatfield, Elizab
 3. Run the development application
 
     ```bash
-    npm run start
+    npm start
     ```
