@@ -3,21 +3,48 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <title>Tic Tac Toe</title>
         <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/style2.css">
     </head>
     <body>
-        <div>
-            <div>
-                <h1 class="text-5xl font-serif underline">
-                    Welcome to Project3
-                </h1>
+        <div class="container">
+            <h1 class="text-5xl">4X4 Tic Tac Toe</h1>
+            <h1 class="text-2xl">This is a popular classic game for kids where each player tries to get 3 in a row. In this game players can play on larger grid sizes where they must instead get 4 in a row.</h1>
 
-                <h2 class="font-mono text-4xl">
-                    Created by ....
-                </h2>
-                <button class="bg-[#1da1f2] text-white"> Share</button>
+            <div class="board" id="board">
+                <div class="cell" data-cell></div>
+                <div class="cell" data-cell></div>
+                <div class="cell" data-cell></div>
+                <div class="cell" data-cell></div>
+                <div class="cell" data-cell></div>
+                <div class="cell" data-cell></div>
+                <div class="cell" data-cell></div>
+                <div class="cell" data-cell></div>
+                <div class="cell" data-cell></div>
+                <div class="cell" data-cell></div>
+                <div class="cell" data-cell></div>
+                <div class="cell" data-cell></div>
+                <div class="cell" data-cell></div>
+                <div class="cell" data-cell></div>
+                <div class="cell" data-cell></div>
+                <div class="cell" data-cell></div>
+                <div class="cell" data-cell></div>
+                <div class="cell" data-cell></div>
+                <div class="cell" data-cell></div>
+                <div class="cell" data-cell></div>
+                <div class="cell" data-cell></div>
+                <div class="cell" data-cell></div>
+                <div class="cell" data-cell></div>
+                <div class="cell" data-cell></div>
+                <div class="cell" data-cell></div>
+            </div>
+            <div class="winning-message" id="winningMessage">
+                <div data-winning-message-text></div>
+                <button id="restartButton">Restart</button>
             </div>
         </div>
+
+        <script src="/script.js"></script>
     </body>
 </html>
