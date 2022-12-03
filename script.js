@@ -56,10 +56,15 @@ startGame()
 restartButton.addEventListener('click', startGame)
 
 function startGame() {
+  let cellIndex = 0
   circleTurn = false
+  circleTurn = JSON.parse(localStorage.getItem('circleTurn'))
   cellElements.forEach(cell => {
     cell.classList.remove(X_CLASS)
     cell.classList.remove(CIRCLE_CLASS)
+    cell.classList.add(cellIndex)
+    cell.classList.add(localStorage.getItem(cellIndex.toString())) // Get items from localStorage
+    cellIndex++
     cell.removeEventListener('click', handleClick)
     cell.addEventListener('click', handleClick, { once: true })
   })
@@ -70,6 +75,8 @@ function startGame() {
 function handleClick(e) {
   const cell = e.target
   const currentClass = circleTurn ? CIRCLE_CLASS : X_CLASS
+  console.log(cell.classList[1])
+  localStorage.setItem(cell.classList[1], currentClass)
   placeMark(cell, currentClass)
   if (checkWin(currentClass)) {
     endGame(false)
@@ -82,6 +89,7 @@ function handleClick(e) {
 }
 
 function endGame(draw) {
+  localStorage.clear()
   if (draw) {
     winningMessageTextElement.innerText = 'Draw!'
   } else {
@@ -102,6 +110,7 @@ function placeMark(cell, currentClass) {
 
 function swapTurns() {
   circleTurn = !circleTurn
+  localStorage.setItem('circleTurn', circleTurn.toString())
 }
 
 

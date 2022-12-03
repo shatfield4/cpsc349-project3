@@ -7,72 +7,104 @@
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/style2.css">
     </head>
-    <body>
-        <main class="bg-gradient-to-r from-blue-100 to-cyan-100 rounded-lg shadow-lg">
-            <div class="gametitle space-y-16 py-10">
-                <h1 class="text-7xl text-center -py-10">4X4 Tic Tac Toe</h1>
+
+    <body class="h-screen">
+        <main class=" bg-gradient-to-r from-blue-100 to-cyan-100 rounded-lg shadow-lg text-slate-800">
+            <div class="py-16">
+                <h1 class="text-7xl text-center text-transparent font-extrabold bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">4X4 Tic Tac Toe</h1>
+                <h2 class="mt-5 text-xl text-center text-transparent font-extrabold bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">Welcome to Tic Tac Toe with a twist!</h2>
             </div>
-            <hr style="border: 10px solid white">
-            <div class="row">
-                <div class = "column">
-                    <h2 class = "text-6xl text-center">Welcome to Tic Tac Toe with a twist! </h2>
-                    <hr>
-                    <div class = "px-20">
-                    <h3 class = "text-4xl py-5">Rules:</h3>
-                    <div class="rules px-20">
-                        <li>
-                            <h4 class ="text-2xl">Player "X" goes first!</h4>
-                        </li>
-                        <li>
-                            <h4 class ="text-2xl">Player "X" and Player "O" takes turn</h4> 
-                        </li>
+
+
+                <div class = "columnboard">
+                    <div class="board" id="board">
+                        <div class="cell" data-cell></div>
+                        <div class="cell" data-cell></div>
+                        <div class="cell" data-cell></div>
+                        <div class="cell" data-cell></div>
+                        <div class="cell" data-cell></div>
+                        <div class="cell" data-cell></div>
+                        <div class="cell" data-cell></div>
+                        <div class="cell" data-cell></div>
+                        <div class="cell" data-cell></div>
+                        <div class="cell" data-cell></div>
+                        <div class="cell" data-cell></div>
+                        <div class="cell" data-cell></div>
+                        <div class="cell" data-cell></div>
+                        <div class="cell" data-cell></div>
+                        <div class="cell" data-cell></div>
+                        <div class="cell" data-cell></div>
+                        <div class="cell" data-cell></div>
+                        <div class="cell" data-cell></div>
+                        <div class="cell" data-cell></div>
+                        <div class="cell" data-cell></div>
+                        <div class="cell" data-cell></div>
+                        <div class="cell" data-cell></div>
+                        <div class="cell" data-cell></div>
+                        <div class="cell" data-cell></div>
+                        <div class="cell" data-cell></div>
                     </div>
-                    <h2 class = "text-4xl py-5">Ways to win:</h2>
-                    <div class="wins px-20">
-                        <li>
-                            <h4 class ="text-2xl">4 in a row</h4>
-                        </li>
-                        <li>
-                            <h4 class ="text-2xl">4 corners</h4> 
-                        </li>
-                    </div>
-                </div>
-                <img src="images/waves2.png" class="py-10 h-100" alt="Wavy Lines" />
             </div>
-            <div class = "columnboard">
-                <div class="board" id="board">
-                    <div class="cell" data-cell></div>
-                    <div class="cell" data-cell></div>
-                    <div class="cell" data-cell></div>
-                    <div class="cell" data-cell></div>
-                    <div class="cell" data-cell></div>
-                    <div class="cell" data-cell></div>
-                    <div class="cell" data-cell></div>
-                    <div class="cell" data-cell></div>
-                    <div class="cell" data-cell></div>
-                    <div class="cell" data-cell></div>
-                    <div class="cell" data-cell></div>
-                    <div class="cell" data-cell></div>
-                    <div class="cell" data-cell></div>
-                    <div class="cell" data-cell></div>
-                    <div class="cell" data-cell></div>
-                    <div class="cell" data-cell></div>
-                    <div class="cell" data-cell></div>
-                    <div class="cell" data-cell></div>
-                    <div class="cell" data-cell></div>
-                    <div class="cell" data-cell></div>
-                    <div class="cell" data-cell></div>
-                    <div class="cell" data-cell></div>
-                    <div class="cell" data-cell></div>
-                    <div class="cell" data-cell></div>
-                    <div class="cell" data-cell></div>
+
+            <div class="flex items-center justify-center m-5">
+                <div class="collapse w-1/2 rounded-lg">
+                    <input type="checkbox" class="peer" /> 
+                    <div class="collapse-title bg-primary text-primary-content peer-checked:bg-secondary peer-checked:text-secondary-content text-2xl flex justify-between">
+                      <p class="pl-7">Rules</p>
+                      <p>+</p>
+                    </div>
+                    <div class="collapse-content bg-primary text-primary-content peer-checked:bg-secondary peer-checked:text-secondary-content text-2xl pl-16"> 
+                      <ul>
+                        <li>• Player "X" goes first!</li>
+                        <li>• Player "X" and Player "O" take turns</li>
+                    </ul>
+                    </div>
                 </div>
-                <div class="winning-message" id="winningMessage">
-                    <div data-winning-message-text></div>
-                    <button id="restartButton">Restart</button>
+            </div>
+
+            <div class="flex items-center justify-center m-5">
+                <div class="collapse w-1/2 rounded-lg">
+                    <input type="checkbox" class="peer" /> 
+                    <div class="collapse-title bg-primary text-primary-content peer-checked:bg-secondary peer-checked:text-secondary-content text-2xl flex justify-between">
+                      <p class="pl-7">Ways to Win</p>
+                      <p>+</p>
+                    </div>
+                    <div class="collapse-content bg-primary text-primary-content peer-checked:bg-secondary peer-checked:text-secondary-content text-2xl pl-16"> 
+                      <ul>
+                        <li>• First player to get four in a row wins!</li>
+                    </ul>
+                    </div>
                 </div>
-            </div>  
-            </div>   
+            </div>
+
+            <div class="flex items-center justify-center m-5">
+                <div class="collapse w-1/2 rounded-lg">
+                    <input type="checkbox" class="peer" /> 
+                    <div class="collapse-title bg-primary text-primary-content peer-checked:bg-secondary peer-checked:text-secondary-content text-2xl flex justify-between">
+                      <p class="pl-7">Developed By</p>
+                      <p>+</p>
+                    </div>
+                    <div class="collapse-content bg-primary text-primary-content peer-checked:bg-secondary peer-checked:text-secondary-content text-2xl pl-16"> 
+                      <ul>
+                        <li>• Chingsan Ly</li>
+                        <li>• Sean Hatfield</li>
+                        <li>• Erica Bravo</li>
+                        <li>• Elizabeth Steubs</li>
+                    </ul>
+                    </div>
+                </div>
+            </div>
+
+            <img src="images/waves2.png" class="py-10 h-100" alt="Wavy Lines" />
+
+
+            <div class="winning-message" id="winningMessage">
+                <div data-winning-message-text></div>
+                <button id="restartButton" class="btn btn-primary">Restart</button>
+            </div>
+
+
+
         </main>
         <script src="/script.js"></script>
     </body>
